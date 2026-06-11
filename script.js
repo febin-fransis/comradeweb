@@ -21,7 +21,7 @@
 
     // 3. Hero Background Image Slideshow logic
     const backgroundImages = [
-        'your-background-hero.jpeg',
+        'your-background-hero.webp',
         'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1600&q=80',
         'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1600&q=80'
     ];

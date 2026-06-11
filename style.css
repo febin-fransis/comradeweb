@@ -7,6 +7,10 @@ body {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
         }
+/* Add this to style.css for testing */
+#slideshow-bg {
+    background-color: red; /* If the screen turns red, the div is rendering, but the image path is wrong */
+}
         .animate-marquee {
             display: flex;
             width: max-content;

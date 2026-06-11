@@ -35,7 +35,7 @@ body {
         .animate-marquee {
             display: flex;
             width: max-content;
-            animation: scroll 20s linear infinite;
+            animation: scroll 10s linear infinite;
         }
 
         /* Pause the slider when a user hovers over the parent group wrapper */

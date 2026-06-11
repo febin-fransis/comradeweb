@@ -29,7 +29,6 @@ body {
             #slideshow-bg {
                 width: 100%;
                 height: 100%; /* Explicitly set this */
-                background-color: red; /* Keep this to test */
                 background-size: cover;
                 background-position: center;
             }

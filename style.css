@@ -1,4 +1,4 @@
-body {
+        {
             font-family: 'Poppins', sans-serif;
         }
         
@@ -184,7 +184,35 @@ body {
         justify-content: center;
         overflow: hidden; /* Prevents text from breaking out of the box */
         }
-    
+        
+                /* Animation Keyframes */
+        @keyframes fadeInUp {
+        from {
+        opacity: 0;
+        transform: translateY(30px);
+        }
+        to {
+        opacity: 1;
+        transform: translateY(0);
+        }
+        }
+
+       .animate-fade-in-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+         /* Staggering the animation for children */
+        .animate-delay-300 {
+         animation-delay: 0.3s;
+           }
+
+         /* Optional: Smooth hover effect for the features grid */
+        .grid > div:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+
+
         @media (max-width: 768px) {
         body { cursor: auto !important; }
         .custom-cursor { display: none; }

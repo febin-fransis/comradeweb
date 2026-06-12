@@ -1,4 +1,4 @@
-    // 1. Custom Cursor Movement
+// 1. Custom Cursor Movement
     const cursor = document.querySelector('.custom-cursor');
     document.addEventListener('mousemove', (e) => {
         if(cursor) {
@@ -41,6 +41,48 @@
             currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
         }
     }
+
+    //e-invoice timer
+    function initEInvoiceTimer() {
+        const countdownEl = document.getElementById("countdown");
+        if (!countdownEl) return;
+
+        // July 2026 target
+        const targetDate = new Date("Jul 1, 2026 00:00:00").getTime();
+
+        const timer = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = targetDate - now;
+        const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Update display elements
+        document.getElementById("days").innerText = String(d).padStart(2, '0');
+        document.getElementById("hours").innerText = String(h).padStart(2, '0');
+        document.getElementById("minutes").innerText = String(m).padStart(2, '0');
+        document.getElementById("seconds").innerText = String(s).padStart(2, '0');
+
+        if (distance < 0) {
+            clearInterval(timer);
+            countdownEl.innerHTML = "<h3 class='text-2xl font-black text-[#10b981]'>System Now Active</h3>";
+        }
+        }, 1000);
+    }
+
+    initEInvoiceTimer();
+    function updateTimer() {
+        const target = new Date("July 1, 2026 00:00:00").getTime();
+        const now = new Date().getTime();
+        const diff = target - now;
+
+        document.getElementById("days").innerText = Math.floor(diff / (1000 * 60 * 60 * 24));
+        document.getElementById("hours").innerText = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        document.getElementById("minutes").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        document.getElementById("seconds").innerText = Math.floor((diff % (1000 * 60)) / 1000);
+    }
+    setInterval(updateTimer, 1000);
 
     // Initialize Hero slideshow
     changeBackgroundImage();
